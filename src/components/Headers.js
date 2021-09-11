@@ -35,7 +35,7 @@ const Headers = () => {
             <HeaderOptions Icon={AddBox} title="Jobs" />
             <HeaderOptions Icon={Message} title="Messaging" />
             <HeaderOptions Icon={Notifications} title="Notifications" />
-            <HeaderOptions title="Logout" avatar={user.email[0].toUpperCase()} onClick={logoutOfApp}  />
+            <HeaderOptions title="Logout" avatar={avatarIcon} onClick={logoutOfApp}  />
 
 
       </div>

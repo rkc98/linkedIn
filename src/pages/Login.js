@@ -61,7 +61,7 @@ const Login = () => {
           } />
           <input type="text" placeholder="Profile Pic Url  (Optional)" value={profilePic} onChange={e=>setprofilePic(e.target.value)} /> */}
           <input type="email" value={email} placeholder="Email" onChange={e=>setemail(e.target.value)} />
-          <input type="password" value={password} placeholder="Password" onChange={e=>setpassword(e.target.value)} />
+          <input type="password" value={password} placeholder="Password" onChange={e=>setpassword(e.target.value)} minLength="6" />
             <button type="submit" >
                 Sign In
             </button>

@@ -8,12 +8,15 @@ import linkedInlogo from "../assets/linkedIn.jpg";
 import { NavLink } from "react-router-dom";
 
 const Register = () => {
+    
+
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [name, setname] = useState("");
   //   const [profilePic, setprofilePic] = useState("");
   const dispatch = useDispatch();
-  const register = () => {
+  const register = (e) => {
+      e.preventDefault();
     if (!name) {
       return alert("please enter your full Name");
     }
@@ -84,6 +87,7 @@ const Register = () => {
           value={password}
           placeholder="Password"
           onChange={(e) => setpassword(e.target.value)}
+          minLength="6"
         />
         <button type="submit">Register</button>
       </form>
