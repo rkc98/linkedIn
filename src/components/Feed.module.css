@@ -22,12 +22,14 @@
   display: flex;
   width: 100%;
 }
-.feed__input > form > input {
-  border: none;
+.feed__input input {
   flex: 1;
   margin-left: 10px;
-  outline-width: 0;
+
   font-weight: 600;
+  outline: none;
+  border: none;
+  background: none;
 }
 .feed__input > form > button {
   display: none;

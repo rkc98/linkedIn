@@ -6,6 +6,7 @@ import { db } from "../firebase";
 import classes from './Feed.module.css'
 import InputOption from "./InputOption";
 import Posts from "./Posts";
+import FlipMove from 'react-flip-move'
 
 const Feed = () => {
     const [posts, setposts] = useState([])
@@ -55,11 +56,12 @@ const Feed = () => {
           </div>
       </div>
       {/* posts  */}
+      <FlipMove> 
       {posts.map(({id,data:{name,description,message,photoUrl}})=>(
           <Posts key={id} name={name} description={description} message={message} photoUrl={photoUrl} />
       ))}
 
-
+</FlipMove>
       {/* <Posts name="Pappu Rai" description="This is a test" message="this works" /> */}
 
 

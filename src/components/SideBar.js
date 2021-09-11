@@ -21,7 +21,7 @@ const SideBar = () => {
             <div className={classes.sidebar__top}>
                 <img src={profileBackground} alt="" />
                 <Avatar src={user.photoUrl}  >
-                    {user.email[0].toUpperCase()}
+                    {user?.email[0].toUpperCase()}
                     </Avatar>
                 <h2>
                     {user.displayName}
