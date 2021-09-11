@@ -5,9 +5,19 @@ import linkediInLogo from '../assets/linkedin.png'
 import HeaderOptions from "./HeaderOptions";
 import { AddBox, Home, Message, Notifications, SupervisorAccountRounded } from "@material-ui/icons";
 import avatarIcon from '../assets/man.png'
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../firebase";
+import { logout, selectUser } from "../features/userSlice";
 
 
 const Headers = () => {
+  const dispatch = useDispatch()
+  const user = useSelector(selectUser)
+
+  const logoutOfApp=()=>{
+    dispatch(logout())
+    auth.signOut();
+  }
   return (
     <div className={classes.header}>
 
@@ -15,7 +25,7 @@ const Headers = () => {
           <img src={linkediInLogo} alt="" />
           <div className={classes.header__search}>
             <SearchIcon />
-              <input type="text" />
+              <input type="text" placeholder="search "  />
           </div>
 
       </div>
@@ -25,7 +35,7 @@ const Headers = () => {
             <HeaderOptions Icon={AddBox} title="Jobs" />
             <HeaderOptions Icon={Message} title="Messaging" />
             <HeaderOptions Icon={Notifications} title="Notifications" />
-            <HeaderOptions title="me" avatar={avatarIcon}  />
+            <HeaderOptions title="Logout" avatar={user.email[0].toUpperCase()} onClick={logoutOfApp}  />
 
 
       </div>

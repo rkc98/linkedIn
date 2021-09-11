@@ -2,8 +2,11 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import classes from './SideBar.module.css'
 import profileBackground from '../assets/profileBackground.jpg'
+import { selectUser } from '../features/userSlice'
+import { useSelector } from 'react-redux'
  
 const SideBar = () => {
+    const  user= useSelector(selectUser)
 
     const recentItem=(topic)=>(
             <div className={classes.sidebar__recentItem}>
@@ -17,12 +20,14 @@ const SideBar = () => {
         <div className={classes.sidebar}>
             <div className={classes.sidebar__top}>
                 <img src={profileBackground} alt="" />
-                <Avatar />
+                <Avatar src={user.photoUrl}  >
+                    {user.email[0].toUpperCase()}
+                    </Avatar>
                 <h2>
-                    Random Man
+                    {user.displayName}
                 </h2>
                 <h4>
-                    random@xyz.com
+                    {user.email}
                 </h4>
             </div>
 
