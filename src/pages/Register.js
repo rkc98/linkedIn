@@ -8,15 +8,13 @@ import linkedInlogo from "../assets/linkedIn.jpg";
 import { NavLink } from "react-router-dom";
 
 const Register = () => {
-    
-
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [name, setname] = useState("");
   //   const [profilePic, setprofilePic] = useState("");
   const dispatch = useDispatch();
   const register = (e) => {
-      e.preventDefault();
+    e.preventDefault();
     if (!name) {
       return alert("please enter your full Name");
     }
@@ -95,7 +93,7 @@ const Register = () => {
       {/* <span className={classes.login__register}>Register Now</span> */}
       <NavLink
         className={classes.login__register}
-        to="/login"
+        to="/"
         style={{ textDecoration: "none" }}
       >
         Login Now
