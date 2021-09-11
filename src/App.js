@@ -1,3 +1,4 @@
+// import { Widgets } from '@material-ui/icons';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -5,6 +6,7 @@ import './App.css';
 import Feed from './components/Feed';
 import Headers from './components/Headers';
 import SideBar from './components/SideBar';
+import Widgets from './components/Widgets';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import Login from './pages/Login';
@@ -44,7 +46,7 @@ function App() {
        {/* SideBar  */}
          <Feed />
        {/* Feed   */}
-
+         <Widgets />
        {/* Widgets    */}
        </div>
         </>
