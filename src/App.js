@@ -1,6 +1,7 @@
 // import { Widgets } from '@material-ui/icons';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 import Feed from './components/Feed';
@@ -10,6 +11,7 @@ import Widgets from './components/Widgets';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   const user = useSelector(selectUser)
@@ -32,11 +34,18 @@ function App() {
   }, [])
   return (
       <div className="app">
-
+         
        
         {/* header  */}
         
-        {!user ? <Login /> :
+        {!user ? <> 
+        <Route path='/login' exact >
+          <Login />
+        </Route>
+        <Route path='/register' exact>
+          <Register />
+        </Route>
+        </> :
         <>
         <Headers />
          
