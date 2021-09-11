@@ -28,8 +28,8 @@ const Widgets = () => {
       </div>
       {newArticle("React","build ironically on React")}
       {newArticle("Covid India updates","Number of Cases Recorded")}
-      {newArticle("Happy Ganesh chaturthi","celebrate in mumbai on ganesh utsav")}
-      {newArticle("Is Redux good option ","industry experts views")}
+      {newArticle("Happy Ganesh Utsav","celebration in mumbai on ganesh utsav")}
+      {newArticle("Is Redux good option ","Industry experts views on it")}
       {newArticle("React Native","News regarding version updates")}
 
 
