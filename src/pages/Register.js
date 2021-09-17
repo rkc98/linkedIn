@@ -60,6 +60,7 @@ const Register = () => {
   //   };
   return (
     <div className={classes.login}>
+      {console.log("register called")}
       <img src={linkedInlogo} alt="" />
       <form onSubmit={register}>
         <input
@@ -93,7 +94,7 @@ const Register = () => {
       {/* <span className={classes.login__register}>Register Now</span> */}
       <NavLink
         className={classes.login__register}
-        to="/"
+        to="/linkedIn/"
         style={{ textDecoration: "none" }}
       >
         Login Now

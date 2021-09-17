@@ -1,8 +1,8 @@
 // import { Widgets } from '@material-ui/icons';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route } from "react-router-dom";
-
+import { CircularProgress } from "@mui/material";
 import "./App.css";
 import Feed from "./components/Feed";
 import Headers from "./components/Headers";
@@ -15,8 +15,10 @@ import Register from "./pages/Register";
 
 function App() {
   const user = useSelector(selectUser);
+  const [isLoading, setisLoading] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
+    setisLoading(true);
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         dispatch(
@@ -30,19 +32,21 @@ function App() {
       } else {
         dispatch(logout());
       }
+      setisLoading(false);
     });
   }, []);
   return (
     <div className="app">
       {/* header  */}
-      <Headers />
+      {/* <Headers /> */}
+      {isLoading && <CircularProgress />}
       {console.log("here ", user)}
       {!user ? (
         <>
-          <Route path="/" exact>
+          <Route path="/linkedIn/" exact>
             <Login />
           </Route>
-          <Route path="/register" exact>
+          <Route path="/linkedIn/register" exact>
             <Register />
           </Route>
         </>
