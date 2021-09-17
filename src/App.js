@@ -35,7 +35,8 @@ function App() {
   return (
     <div className="app">
       {/* header  */}
-
+      <Headers />
+      {console.log("here ", user)}
       {!user ? (
         <>
           <Route path="/" exact>
